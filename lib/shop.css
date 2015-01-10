@@ -1,4 +1,5 @@
 .thumbnail img { display: block; }
+#catalog .form-group { margin: 10px 15px; }
 #filter .checkbox { padding-left: 10px; }
 #cart .media-list { padding: 10px;}
 #cart .media-body { width: 100%; padding-right: 10px; }
