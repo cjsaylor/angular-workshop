@@ -1,0 +1,56 @@
+[  
+   {  
+      "id":1,
+      "name":"Brown Shirt",
+      "color":"brown",
+      "price":15
+   },
+   {  
+      "id":2,
+      "name":"White Shirt",
+      "color":"white",
+      "price":15
+   },
+   {  
+      "id":3,
+      "name":"Yellow Shirt",
+      "color":"yellow",
+      "price":15
+   },
+   {  
+      "id":4,
+      "name":"Green Shirt",
+      "color":"green",
+      "price":14
+   },
+   {  
+      "id":5,
+      "name":"Blue Shirt",
+      "color":"blue",
+      "price":13.99
+   },
+   {  
+      "id":6,
+      "name":"Dark Blue Shirt",
+      "color":"blue",
+      "price":15.99
+   },
+   {  
+      "id":7,
+      "name":"Dark Green Shirt",
+      "color":"green",
+      "price":19.99
+   },
+   {  
+      "id":8,
+      "name":"Purple Shirt",
+      "color":"purple",
+      "price":19.99
+   },
+   {  
+      "id":9,
+      "name":"Neon Pink Shirt",
+      "color":"pink",
+      "price":29.99
+   }
+]
