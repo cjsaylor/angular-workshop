@@ -40,6 +40,9 @@
                 deferred.resolve(catalogCache);
             } else {
                 $http.get('../data/catalog.json')
+                    .success(function(items) {
+                        catalogCache = items;
+                    })
                     .success(deferred.resolve)
                     .error(deferred.reject);
             }
