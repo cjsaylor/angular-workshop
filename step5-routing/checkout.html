@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-sm-8">
+        <form>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="fname">First Name</label>
+                        <input type="text" class="form-control" id="fname">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="lname">Last Name</label>
+                        <input type="text" class="form-control" id="lname">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="john@example.com">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="phone">Phone</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="(800)111-2222">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h4>Payment Info</h4>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="card-number">Card Number</label>
+                        <input type="text" class="form-control" id="card-number">
+                    </div>
+                    <div class="col-sm-2">
+                        <label for="card-cvv">CVV</label>
+                        <input type="password" class="form-control" id="card-cvv" maxlength="4">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="card-expiration">Expiration Date</label>
+                        <input type="month" class="form-control" id="card-expiration">
+                    </div>
+                </div>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> I agree to all Terms and Conditions
+                </label>
+            </div>
+            <div class="well" aw-cart>
+                <h4 class="pull-left"><strong>Total: {{ cart.total | currency }}</strong></h4>
+                <button type="submit" class="btn btn-lg btn-default btn-success pull-right">Complete Purchase</button>
+                <div class="clearfix"></div>
+            </div>
+        </form>
+    </div>
+    <div id="cart" class="col-sm-4" aw-cart>
+        <aw-cart-list></aw-cart-list>
+    </div>
+</div>
