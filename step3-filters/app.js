@@ -8,18 +8,31 @@
 
     app.controller('Catalog', ['$scope', 'catalog', function($scope, catalog) {
         $scope.loading = true;
+        $scope.selectedColors = [];
         catalog.retrieve()
             .then(function(items) {
                 $scope.items = items;
             })
             .finally(setLoadingDone.bind($scope));
+        $scope.$root.$on('colorFiltered', function(e, colors) {
+            $scope.selectedColors = colors;
+        });
     }]);
 
     app.controller('Filter', ['$scope', 'catalog', function($scope, catalog) {
+        this.selectedColors = [];
         catalog.availableColors()
             .then(function(colors) {
                 $scope.colors = colors;
             });
+        this.filterColor = function() {
+            var selectedColors = this.selectedColors;
+            var selected = Object.keys(selectedColors)
+                .filter(function(color) {
+                    return selectedColors[color];
+                });
+            $scope.$root.$emit('colorFiltered', selected);
+        }.bind(this);
     }]);
 
     // View filter that capitalizes words
@@ -31,6 +44,17 @@
             }).join(' ');
         };
     });
+
+    app.filter('sizes', function() {
+        return function(input, colors) {
+            if (!colors.length) {
+                return input;
+            }
+            return input.filter(function(item) {
+                return colors.indexOf(item.color) >= 0;
+            });
+        }
+    })
 
     app.service('catalog', ['$http', '$q', function($http, $q) {
         var catalogCache;

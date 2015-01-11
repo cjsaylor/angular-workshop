@@ -29,7 +29,7 @@
                     </div>
                     <div
                         class="col-sm-6 col-md-4"
-                        ng-repeat="item in items | filter:search as result">
+                        ng-repeat="item in items | sizes:selectedColors | filter:search as result">
                         <div class="thumbnail">
                             <img src="../lib/shirt.png">
                             <div class="caption">
@@ -53,7 +53,12 @@
                         <div class="checkbox">
                             <label
                                 ng-repeat="color in colors">
-                                <input type="checkbox" name="color" ng-value="color"> {{::color | capitalize}}
+                                <input
+                                    type="checkbox"
+                                    name="{{ ::color }}"
+                                    ng-model="filterCtrl.selectedColors[color]"
+                                    ng-click="filterCtrl.filterColor()"
+                                > {{::color | capitalize}}
                             </label>
                         </div>
                     </div>
