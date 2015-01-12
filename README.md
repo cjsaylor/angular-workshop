@@ -15,6 +15,7 @@ all dependencies are committed into the `/lib` subdirectory.
 The app itself is meant to run without any internet requirement.
 
 * `angular.js` - v1.3.8 (unminified)
+* `angular-route.js` - v1.3.8 (unminified)
 * `bootstrap.min.css` - v3.3
 
 ## Running on local file system
