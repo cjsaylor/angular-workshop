@@ -74,7 +74,6 @@
     app.directive('awCartList', function() {
         return {
             require: '^awCart',
-            transclude: true,
             templateUrl: 'cart.html'
         }
     });
