@@ -1,25 +1,14 @@
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h5 class="pull-left"><strong>Cart</strong></h5>
-        <a href="#/checkout" class="btn btn-success pull-right" ng-disabled="isEmpty()">Checkout</a>
-        <div class="clearfix"></div>
-    </div>
-    <p class="center-block empty" ng-if="isEmpty()">Your cart is empty</p>
-    <ul class="media-list">
-        <li class="media" ng-repeat="item in cart.items">
-            <a href="" class="media-left">
-                <img src="../lib/shirt.png">
-            </a>
-            <div class="media-body">
-                <h4 class="media-heading">{{ item.name }}</h4>
-                <p>Quantity: {{ item.quantity }}</p>
-                <strong class="pull-right">{{ lineTotal(item) | currency }}</strong>
-            </div>
-        </li>
-    </ul>
-    <div class="panel-footer">
-        <a href="#/checkout" class="btn btn-success pull-left" ng-disabled="isEmpty()">Checkout</a>
-        <h5 class="pull-right"><strong>Total: {{ cart.total | currency }}<strong></h5>
-        <div class="clearfix"></div>
-    </div>
-</div>
+<p class="center-block empty" ng-if="isEmpty()">Your cart is empty</p>
+<ul class="media-list">
+    <li class="media" ng-repeat="item in cart.items">
+        <a href="" class="media-left">
+            <img src="../lib/shirt.png">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">{{ item.name }}</h4>
+            <p>Quantity: {{ item.quantity }}</p>
+            <strong class="pull-right">{{ lineTotal(item) | currency }}</strong>
+        </div>
+    </li>
+</ul>
+    

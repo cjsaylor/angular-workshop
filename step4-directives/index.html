@@ -65,7 +65,21 @@
                         </div>
                     </div>
                 </div>
-                <div id="cart" aw-cart></div>
+                <div id="cart" aw-cart>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h5 class="pull-left"><strong>Cart</strong></h5>
+                            <a href="#/checkout" class="btn btn-success pull-right" ng-disabled="isEmpty()">Checkout</a>
+                            <div class="clearfix"></div>
+                        </div>
+                        <aw-cart-list></aw-cart-list>
+                        <div class="panel-footer">
+                            <a href="#/checkout" class="btn btn-success pull-left" ng-disabled="isEmpty()">Checkout</a>
+                            <h5 class="pull-right"><strong>Total: {{ cart.total | currency }}</strong></h5>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

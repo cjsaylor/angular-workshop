@@ -53,10 +53,16 @@
                     return item.price * item.quantity;
                 };
                 $scope.isEmpty = cart.isEmpty;
-            }],
-            templateUrl: 'cart.html'
+            }]
         }
     }]);
+
+    app.directive('awCartList', function() {
+        return {
+            require: '^awCart',
+            templateUrl: 'cart.html'
+        }
+    });
 
     // View filter that capitalizes words
     // Use: {{ sentence | capitalize }}
