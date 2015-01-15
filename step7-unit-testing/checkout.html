@@ -1,0 +1,118 @@
+<div class="row">
+    <div class="col-sm-8">
+        <form name="checkout" ng-submit="success = checkout.$valid" novalidate>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group" ng-class="{'has-error': (checkout.fname.$touched || checkout.$submitted) && checkout.fname.$invalid}">
+                        <label class="control-label" for="fname">First Name</label>
+                        <input type="text" class="form-control" ng-model="fname" id="fname" name="fname" required>
+                        <p class="text-danger" ng-if="(checkout.fname.$touched || checkout.$submitted) && checkout.fname.$error.required">First name is required.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group" ng-class="{'has-error': (checkout.lname.$touched || checkout.$submitted) && checkout.lname.$invalid}">
+                        <label class="control-label" for="lname">Last Name</label>
+                        <input type="text" class="form-control" ng-model="lname" id="lname" name="lname" required>
+                        <p class="text-danger" ng-if="(checkout.lname.$touched || checkout.$submitted) && checkout.lname.$error.required">Last name is required.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group" ng-class="{'has-error': (checkout.email.$touched || checkout.$submitted) && checkout.email.$invalid}">
+                        <label class="control-label" for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" ng-model="email" placeholder="john@example.com" required>
+                        <p class="text-danger" ng-if="(checkout.email.$touched || checkout.$submitted) && checkout.email.$error.required">Email is required.</p>
+                        <p class="text-danger" ng-if="(checkout.email.$touched || checkout.$submitted) && checkout.email.$error.email">Email is invalid.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group" ng-class="{'has-error': (checkout.phone.$touched || checkout.$submitted) && checkout.phone.$invalid}">
+                        <label class="control-label" for="phone">Phone</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" ng-model="phone" placeholder="(800)111-2222" required>
+                        <p class="text-danger" ng-if="(checkout.phone.$touched || checkout.$submitted) && checkout.phone.$error.required">Phone is required.</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h4>Payment Info</h4>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group" ng-class="{'has-error': (checkout.cardNumber.$touched || checkout.$submitted) && checkout.cardNumber.$invalid}">
+                        <label class="control-label" for="card-number">Card Number</label>
+                        <input type="text" class="form-control" id="card-number" name="cardNumber" ng-model="cardNumber" required>
+                        <p class="text-danger" ng-if="(checkout.cardNumber.$touched || checkout.$submitted) && checkout.cardNumber.$error.required">Card number is required.</p>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group" ng-class="{'has-error': (checkout.cardCvv.$touched || checkout.$submitted) && checkout.cardCvv.$invalid}">
+                        <label class="control-label" for="card-cvv">CVV</label>
+                        <input type="password" class="form-control" id="card-cvv" name="cardCvv" ng-model="cardCvv" maxlength="4" required>
+                        <p class="text-danger" ng-if="(checkout.cardCvv.$touched || checkout.$submitted) && checkout.cardCvv.$error.required">Card CVV is required.</p>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{
+                    'has-error': (checkout.cardExpirationMonth.$touched || checkout.cardExpirationYear.$touched || checkout.$submitted) && (checkout.cardExpirationMonth.$invalid || checkout.cardExpirationYear.$invalid)
+                }">
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label class="control-label" for="card-expiration-month">Expiry Month</label>
+                                <select
+                                    id="card-expiration-month"
+                                    name="cardExpirationMonth"
+                                    class="form-control"
+                                    ng-options="month for month in expirationMonths"
+                                    ng-model="cardExpirationMonth"
+                                    required
+                                ></select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="control-label" for="card-expiration-year">Expiry Year</label>
+                                <select
+                                    id="card-expiration-year"
+                                    name="cardExpirationYear"
+                                    class="form-control"
+                                    ng-options="year for year in expirationYears"
+                                    ng-model="cardExpirationYear"
+                                    aw-card-expiration
+                                    aw-month="cardExpirationMonth"
+                                    aw-year="cardExpirationYear"
+                                    required
+                                ></select>
+                            </div>
+                        </div>
+                        <p class="text-danger" ng-if="(checkout.cardExpirationMonth.$touched || checkout.cardExpirationYear.$touched || checkout.$submitted) && (checkout.cardExpirationMonth.$error.required || checkout.cardExpirationYear.$error.required)">Card expiration date is required.</p>
+                        <p class="text-danger" ng-if="(checkout.cardExpirationMonth.$touched || checkout.cardExpirationYear.$touched || checkout.$submitted) && (checkout.cardExpirationMonth.$error.expired || checkout.cardExpirationYear.$error.expired)">Card expiration date is invalid.</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div ng-class="{'has-error': checkout.agreement.$invalid && checkout.$submitted}">
+                <div class="checkbox">
+                    <label class="control-label">
+                        <input type="checkbox" name="agreement" ng-model="agreement" required> I agree to all Terms and Conditions
+                    </label>
+                    <p class="text-danger" ng-if="checkout.$submitted && checkout.agreement.$error.required">You must agree to the terms and conditions.</p>
+                </div>
+            </div>
+            <div class="well" aw-cart>
+                <h4 class="pull-left"><strong>Total: {{ cart.total | currency }}</strong></h4>
+                <button 
+                    type="submit"
+                    class="btn btn-lg btn-default pull-right"
+                    ng-class="{
+                        'btn-primary': !success,
+                        'btn-success': success
+                    }"
+                >
+                    {{ !success ? 'Complete Purchase' : 'Purchase Success' }}
+                </button>
+                <div class="clearfix"></div>
+            </div>
+        </form>
+    </div>
+    <div id="cart" class="col-sm-4" aw-cart>
+        <aw-cart-list></aw-cart-list>
+    </div>
+</div>

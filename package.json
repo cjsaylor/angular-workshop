@@ -1,0 +1,28 @@
+{
+  "name": "ng-workshop",
+  "version": "1.0.0",
+  "description": "This repo holds the content needed for learning the basics of angular.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cjsaylor/angular-workshop.git"
+  },
+  "author": "Chris Saylor <cjsaylor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cjsaylor/angular-workshop/issues"
+  },
+  "homepage": "https://github.com/cjsaylor/angular-workshop",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "karma-chai": "^0.1.0",
+    "karma-coverage": "~0.2.4",
+    "karma-mocha": "~0.1.6",
+    "karma-mocha-reporter": "^0.3.1",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "mocha": "~1.20.1"
+  }
+}
