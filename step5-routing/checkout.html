@@ -1,56 +1,126 @@
 <div class="row">
     <div class="col-sm-8">
-        <form>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <label for="fname">First Name</label>
-                        <input type="text" class="form-control" id="fname">
+        <form name="checkout">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group" >
+                        <label class="control-label" for="fname">First Name</label>
+                        <input type="text" class="form-control"id="fname" name="fname" required>
+                        <!--<p class="text-danger">First name is required.</p>-->
                     </div>
-                    <div class="col-sm-6">
-                        <label for="lname">Last Name</label>
-                        <input type="text" class="form-control" id="lname">
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label" for="lname">Last Name</label>
+                        <input type="text" class="form-control"id="lname" name="lname" required>
+                        <!--<p class="text-danger">Last name is required.</p>-->
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="john@example.com">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label" for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="john@example.com" required>
+                        <!--<p class="text-danger">Email is required.</p>-->
+                        <!--<p class="text-danger">Email is invalid.</p>-->
                     </div>
-                    <div class="col-sm-6">
-                        <label for="phone">Phone</label>
-                        <input type="tel" class="form-control" id="phone" placeholder="(800)111-2222">
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label" for="phone">Phone</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="(800)111-2222" required>
+                        <!--<p class="text-danger">Phone is required.</p>-->
                     </div>
                 </div>
             </div>
             <hr>
             <h4>Payment Info</h4>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <label for="card-number">Card Number</label>
-                        <input type="text" class="form-control" id="card-number">
-                    </div>
-                    <div class="col-sm-2">
-                        <label for="card-cvv">CVV</label>
-                        <input type="password" class="form-control" id="card-cvv" maxlength="4">
-                    </div>
-                    <div class="col-sm-4">
-                        <label for="card-expiration">Expiration Date</label>
-                        <input type="month" class="form-control" id="card-expiration">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label class="control-label" for="card-number">Card Number</label>
+                        <input type="text" class="form-control" id="card-number" name="cardNumber" required>
+                        <!-- <p class="text-danger">Card number is required.</p> -->
                     </div>
                 </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label class="control-label" for="card-cvv">CVV</label>
+                        <input type="password" class="form-control" id="card-cvv" name="cardCvv" maxlength="4" required>
+                        <!-- <p class="text-danger">Card CVV is required.</p> -->
+                    </div>
+                </div>
+                <div class="form-group" >
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label class="control-label" for="card-expiration-month">Expiry Month</label>
+                                <select
+                                    id="card-expiration-month"
+                                    name="cardExpirationMonth"
+                                    class="form-control"
+                                    required
+                                >
+                                    <option value=""></option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="control-label" for="card-expiration-year">Expiry Year</label>
+                                <select
+                                    id="card-expiration-year"
+                                    name="cardExpirationYear"
+                                    class="form-control"
+                                    required
+                                >
+                                    <option value=""></option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- <p class="text-danger">Card expiration date is required.</p>
+                        <p class="text-danger">Card expiration date is invalid.</p> -->
+                    </div>
+                    
+                </div>
             </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"> I agree to all Terms and Conditions
-                </label>
+            <div>
+                <div class="checkbox">
+                    <label class="control-label">
+                        <input type="checkbox" name="agreement" required> I agree to all Terms and Conditions
+                    </label>
+                    <!-- <p class="text-danger">You must agree to the terms and conditions.</p> -->
+                </div>
             </div>
             <div class="well" aw-cart>
                 <h4 class="pull-left"><strong>Total: {{ cart.total | currency }}</strong></h4>
-                <button type="submit" class="btn btn-lg btn-default btn-success pull-right">Complete Purchase</button>
+                <button 
+                    type="submit"
+                    class="btn btn-lg btn-default pull-right"
+                    ng-class="{
+                        'btn-primary': !success,
+                        'btn-success': success
+                    }"
+                >
+                    {{ !success ? 'Complete Purchase' : 'Purchase Success' }}
+                </button>
                 <div class="clearfix"></div>
             </div>
         </form>
