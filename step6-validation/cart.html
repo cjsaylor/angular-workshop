@@ -1,0 +1,14 @@
+<p class="center-block empty" ng-if="isEmpty()">Your cart is empty</p>
+<ul class="media-list">
+    <li class="media" ng-repeat="item in cart.items">
+        <a href="" class="media-left">
+            <img src="../lib/shirt.png">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">{{ item.name }}</h4>
+            <p>Quantity: {{ item.quantity }}</p>
+            <strong class="pull-right">{{ lineTotal(item) | currency }}</strong>
+        </div>
+    </li>
+</ul>
+    
