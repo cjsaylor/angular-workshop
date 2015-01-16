@@ -8,7 +8,7 @@ define(function() {
 
     var getTotal = function() {
         var total = 0;
-        if (isEmpty()) {
+        if (this.isEmpty()) {
             return total;
         }
         Object.keys(cart.items).forEach(function(id) {
@@ -25,7 +25,7 @@ define(function() {
         } else {
             cart.items[item.id].quantity++;
         }
-        cart.total = getTotal();
+        cart.total = getTotal.call(this);
     };
 
     Cart.prototype.get = function() {
