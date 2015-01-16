@@ -1,4 +1,5 @@
 define(function() {
+    var catalogCache;
     var Catalog = function($http, $q) {
         this.$http = $http;
         this.$q = $q;
