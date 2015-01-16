@@ -1,6 +1,6 @@
 (function(window) {
     window.require.config({
-        baseUrl: '/step8-requirejs',
+        baseUrl: '../step8-requirejs',
         paths: {
             angular: '../lib/angular',
             angularRoute: '../lib/angular-route'
