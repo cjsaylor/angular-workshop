@@ -17,7 +17,7 @@ define([
 ) {
     var cart = angular.module('cart', []);
 
-    cart.service(cartService);
+    cart.service('cart', cartService);
     
     cart
         .directive('awCartAdd', awCartAdd)
