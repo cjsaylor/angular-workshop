@@ -2,15 +2,27 @@
 	"use strict";
     var app = angular.module('workshop', []);
 
-    app.controller('Catalog', ['$scope', '$http', function($scope, $http) {
-        $scope.loading = true;
-        $http.get('../data/catalog.json')
-            .then(function(data) {
-                $scope.items = data.data;
-            })
-            .finally(function() {
-                $scope.loading = false;
-            });
+    app.controller('Catalog', ['$scope', function($scope) {
+        $scope.items = [
+            {  
+                "id":1,
+                "name":"Brown Shirt",
+                "color":"brown",
+                "price":15
+            },
+            {  
+                "id":2,
+                "name":"White Shirt",
+                "color":"white",
+                "price":15
+            },
+            {  
+                "id":3,
+                "name":"Yellow Shirt",
+                "color":"yellow",
+                "price":15
+            },
+        ];
     }]);
 
 }());
