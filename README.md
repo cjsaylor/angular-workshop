@@ -5,7 +5,8 @@ This repo holds the content needed for learning the basics of angular.
 The `/start` subdirectory is the application before any dynamic content is added. This
 is meant for the student to begin with and add angular code/markup.
 
-Each "step" will be outlined here and one solution to the step will be in subsequent step directories.
+Each step directory will contain overview information and a list of tasks to complete. The solution to the tasks
+are available in those directories.
 
 ## Dependencies
 
@@ -38,4 +39,20 @@ google-chrome --allow-file-access-from-files
 
 ```
 chrome.exe --allow-file-access-from-files
+```
+
+### Self hosting
+
+There are some scripting languages that support a local webserver in place of running the browser in an unsecure fashion:
+
+* PHP 5.4+
+
+```bash
+php -S localhost:4000
+```
+
+* Python
+
+```bash
+python -m SimpleHTTPServer
 ```
