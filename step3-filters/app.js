@@ -61,16 +61,13 @@
         var retrieve = function() {
             var deferred = $q.defer();
             if (catalogCache) {
-                deferred.resolve(catalogCache);
+                return catalogCache;
             } else {
                 $http.get('../data/catalog.json')
-                    .success(function(items) {
-                        catalogCache = items;
-                    })
                     .success(deferred.resolve)
                     .error(deferred.reject);
             }
-            return deferred.promise;
+            return catalogCache = deferred.promise;
         };
 
         var availableColors = function() {

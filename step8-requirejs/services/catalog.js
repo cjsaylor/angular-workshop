@@ -10,16 +10,13 @@ define(function() {
     proto.retrieve = function() {
         var deferred = this.$q.defer();
         if (catalogCache) {
-            deferred.resolve(catalogCache);
+            return catalogCache;
         } else {
             this.$http.get('../data/catalog.json')
-                .success(function(items) {
-                    catalogCache = items;
-                })
                 .success(deferred.resolve)
                 .error(deferred.reject);
         }
-        return deferred.promise;
+        return catalogCache = deferred.promise;
     };
 
     proto.availableColors = function() {
