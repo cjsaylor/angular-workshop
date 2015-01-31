@@ -4,6 +4,8 @@ Angular provides a route system that works off of a hash-based URI from the URL.
 system is packaged in a standalone module called "ngRoute". In this tutorial, the "ngRoute" module
 is provided under `lib/angular-route.js`.
 
+[More indepth information on routing](https://code.angularjs.org/1.3.10/docs/api/ngRoute)
+
 ## Assignment
 
 1. Include `lib/angular-route.js` in the `index.html`.
