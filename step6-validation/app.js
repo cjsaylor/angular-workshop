@@ -126,7 +126,7 @@
         };
     });
 
-    app.filter('sizes', function() {
+    app.filter('colors', function() {
         return function(input, colors) {
             if (!colors.length) {
                 return input;

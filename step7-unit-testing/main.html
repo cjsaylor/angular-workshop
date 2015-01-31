@@ -6,7 +6,7 @@
             </div>
             <div
                 class="col-sm-6 col-md-4"
-                ng-repeat="item in items | sizes:selectedColors | filter:search as result"
+                ng-repeat="item in items | colors:selectedColors | filter:search as result"
                 aw-cart-add
             >
                 <div class="thumbnail">

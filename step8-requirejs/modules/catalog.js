@@ -5,7 +5,7 @@ define([
     'controllers/filter',
 
     'filters/capitalize',
-    'filters/sizes',
+    'filters/colors',
 
     'services/catalog'
 ], function(
@@ -15,7 +15,7 @@ define([
     filterController,
 
     capitalize,
-    sizes,
+    colors,
 
     catalogService
 ) {
@@ -27,7 +27,7 @@ define([
 
     catalog
         .filter('capitalize', capitalize)
-        .filter('sizes', sizes);
+        .filter('colors', colors);
 
     catalog.service('catalog', catalogService);
 }); 

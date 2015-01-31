@@ -121,7 +121,7 @@
         };
     });
 
-    catalog.filter('sizes', function() {
+    catalog.filter('colors', function() {
         return function(input, colors) {
             if (!colors.length) {
                 return input;
