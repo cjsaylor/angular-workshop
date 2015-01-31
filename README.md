@@ -56,3 +56,13 @@ php -S localhost:4000
 ```bash
 python -m SimpleHTTPServer
 ```
+
+## Offline Package
+
+[Complete offline package](https://assets.chris-saylor.com/tutorial/angular-workshop.zip)
+
+Included:
+
+* Nodejs (OSX, Linux, Windows)
+* Workshop files and assets
+* Angular docs (v1.3.8)
