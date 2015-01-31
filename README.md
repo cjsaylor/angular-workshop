@@ -59,7 +59,7 @@ python -m SimpleHTTPServer
 
 ## Offline Package
 
-[Complete offline package](https://assets.chris-saylor.com/tutorial/angular-workshop.zip)
+[Complete offline package](https://github.com/cjsaylor/angular-workshop/releases/latest)
 
 Included:
 
