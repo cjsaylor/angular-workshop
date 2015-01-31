@@ -5,7 +5,7 @@ applyed by html attributes (or custom tag names) on the dom. They can be used fr
 from attaching an html template to attaching data to the scope of that attribute. You have
 already used directives up until this point: `ng-app`, `ng-repeat`, `ng-controller`.
 
-[More indepth information on filters](https://code.angularjs.org/1.3.10/docs/guide/directive)
+[More indepth information on directives](https://code.angularjs.org/1.3.10/docs/guide/directive)
 
 ## Assignment
 
